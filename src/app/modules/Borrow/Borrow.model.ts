@@ -1,7 +1,6 @@
-import { model, ObjectId, Schema, Types } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 import { BorrowModel, TBorrow } from "./Borrow.interface";
 import { Book } from "../Book/Book.model";
-import { TBook } from "../Book/Book.interface";
 
 
 

@@ -35,7 +35,7 @@ It provides features for **Admin** and **User** roles to manage books and borrow
 
 - `POST /api/books` to Create Book
 
-Example Input: 
+Example Input: <br>
 {
   "title": "The Theory of Everything",
   "author": "Stephen Hawking",
@@ -51,7 +51,7 @@ Example Input:
 
 - `PUT /api/books/:bookId` to Update Book
 
-Example Input:
+Example Input: <br>
 {
   "copies": 50
 }
@@ -60,7 +60,7 @@ Example Input:
 
 - `POST /api/borrow` to Borrow Book
 
-Example Input:
+Example Input: <br>
 {
   "book": "64ab3f9e2a4b5c6d7e8f9012",
   "quantity": 2,

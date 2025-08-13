@@ -26,8 +26,9 @@ borrowSchema.statics.deductCopies = async (bookId: string, quantity: number): Pr
         throw new Error('Book Does Not Exist')
     }
 
-  if(book.copies < quantity){
-    throw new Error('Not enough copies')
+    if(book.copies < quantity){
+      throw new Error('Not enough copies')
+      
   }
 
   book.copies = book.copies - quantity
@@ -41,13 +42,18 @@ borrowSchema.statics.deductCopies = async (bookId: string, quantity: number): Pr
 }
 
 
+
 borrowSchema.pre('save', async function(){
-  console.log(`Book ${this.book as ObjectId} will be Borrowed`)
+  let book: TBorrow = this
+  console.log(`Book ${book.book} will be Borrowed`)
 })
 
 
+
+
 borrowSchema.post('save', async function(){
-  console.log(`Book ${this.book as ObjectId} has been Borrowed`)
+  let book: TBorrow = this
+  console.log(`Book ${book.book} has been Borrowed`)
 })
 
 

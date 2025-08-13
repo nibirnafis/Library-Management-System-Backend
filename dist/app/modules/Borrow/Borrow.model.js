@@ -39,12 +39,14 @@ exports.borrowSchema.statics.deductCopies = (bookId, quantity) => __awaiter(void
 });
 exports.borrowSchema.pre('save', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`Book ${this.book} will be Borrowed`);
+        let book = this;
+        console.log(`Book ${book.book} will be Borrowed`);
     });
 });
 exports.borrowSchema.post('save', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`Book ${this.book} has been Borrowed`);
+        let book = this;
+        console.log(`Book ${book.book} has been Borrowed`);
     });
 });
 exports.Borrow = (0, mongoose_1.model)("Borrow", exports.borrowSchema);

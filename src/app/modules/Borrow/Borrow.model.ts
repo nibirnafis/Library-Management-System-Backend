@@ -44,7 +44,7 @@ borrowSchema.statics.deductCopies = async (bookId: string, quantity: number): Pr
 
 
 borrowSchema.pre('save', async function(){
-  let doc: Partial<TBorrow> = this
+  const doc = this as TBorrow
   console.log(`Book ${doc.book} will be Borrowed`)
 })
 
@@ -52,7 +52,7 @@ borrowSchema.pre('save', async function(){
 
 
 borrowSchema.post('save', async function(){
-  let doc: Partial<TBorrow> = this
+  const doc = this as TBorrow
   console.log(`Book ${doc.book} has been Borrowed`)
 })
 

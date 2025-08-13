@@ -34,11 +34,39 @@ It provides features for **Admin** and **User** roles to manage books and borrow
 ## 📂 API Endpoints Overview
 
 - `POST /api/books` to Create Book
+
+Example Input: 
+{
+  "title": "The Theory of Everything",
+  "author": "Stephen Hawking",
+  "genre": "SCIENCE",
+  "isbn": "9780553380163",
+  "description": "An overview of cosmology and black holes.",
+  "copies": 5,
+  "available": true
+}
+
 - `GET /api/books` to View all Books
 - `GET /api/books/:bookId` to View single Book
+
 - `PUT /api/books/:bookId` to Update Book
+
+Example Input:
+{
+  "copies": 50
+}
+
 - `DELETE /api/books/:bookId` to Delete Book
+
 - `POST /api/borrow` to Borrow Book
+
+Example Input:
+{
+  "book": "64ab3f9e2a4b5c6d7e8f9012",
+  "quantity": 2,
+  "dueDate": "2025-07-18T00:00:00.000Z"
+}
+
 - `GET /api/borrow` to View Borrow Summary
 
 ---

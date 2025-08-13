@@ -42,12 +42,12 @@ borrowSchema.statics.deductCopies = async (bookId: string, quantity: number): Pr
 
 
 borrowSchema.pre('save', async function(){
-  console.log(`Book ${this.book} will be Borrowed`)
+  console.log(`Book ${this.book as ObjectId} will be Borrowed`)
 })
 
 
 borrowSchema.post('save', async function(){
-  console.log(`Book ${this.book} has been Borrowed`)
+  console.log(`Book ${this.book as ObjectId} has been Borrowed`)
 })
 
 
